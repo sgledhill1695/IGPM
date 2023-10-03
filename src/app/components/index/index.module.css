@@ -1,0 +1,38 @@
+.heroContainer{
+    background-image:  url("../../../../public/images/hero-image.png");
+    background-position: 0% -135px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width:100vw;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 1279px) {
+    .heroContainer {
+        background-position: top center;
+    }
+}
+
+.heroContainer::after {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 1279px) {
+    .heroContainer::after {
+        opacity: 0.6;
+    }
+}
+
+.heroContainerText{
+    z-index: 3;
+    position: relative;
+}

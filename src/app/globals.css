@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: inter-reg;
+  src: url('../../public/fonts/inter/Inter-Regular.ttf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: onset-bold;
+  src: url('../../public/fonts/onset/Onest-Bold.ttf');
+}
+
+@font-face {
+  font-family: onset-semibold;
+  src: url('../../public/fonts/onset/Onest-SemiBold.ttf');
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: inter-reg;
+  font-size: 1.063rem;
+  font-style: normal;
+  line-height: normal;
+}
+
+h1 {
+  font-family: onset-semibold;
+  font-size: 3.5rem;
+  font-style: normal;
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size:2.5rem;
+  }
+}
+
+h2 {
+  font-family: onset-bold;
+  font-family: Onest;
+  font-size: 40px;
+  font-weight: 700;
+
+}
+
+.nav-link{
+  color: #303030;
+  font-family: onset-bold;
+  font-size: 14px;
+}
+
+
+.brand-blue-bg{
+  background-color: #1C4F70;
 }

@@ -36,3 +36,62 @@
     z-index: 3;
     position: relative;
 }
+
+
+
+
+/* ACCORDION STYLES */
+.accordion:hover svg {
+    fill:#B4C5D0;
+}
+
+.accordion:hover p {
+    color: white;
+}
+
+.panel {
+    max-height: 0;
+    opacity: 0;
+    display: hidden;
+    overflow: hidden;
+}
+
+.open{
+    display: flex;
+    opacity: 1;
+    overflow: visible;
+    max-height: 500px;
+    transition: opacity, max-height 1s;
+    margin-bottom: 10px;
+}
+
+
+
+/* IMAGE BUTTONS */
+.imageButtonOne{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 20.19%, rgba(0, 0, 0, 0.00) 57.76%), url('../../../../public/images/hwch-1.png'), lightgray 50% / cover no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imageButtonTwo {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 20.19%, rgba(0, 0, 0, 0.00) 57.76%), url('../../../../public/images/hwch-two.png'), lightgray 50% / cover no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imageButtonThree {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 20.19%, rgba(0, 0, 0, 0.00) 57.76%), url('../../../../public/images/hwch-three.png'), lightgray 50% / cover no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imageButtonFour {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 20.19%, rgba(0, 0, 0, 0.00) 57.76%), url('../../../../public/images/hwch-four.png'), lightgray 50% / cover no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

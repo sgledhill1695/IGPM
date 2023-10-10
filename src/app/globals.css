@@ -24,31 +24,74 @@ body {
   line-height: normal;
 }
 
-h1 {
+
+.hero {
   font-family: onset-semibold;
   font-size: 3.5rem;
   font-style: normal;
 }
 
 @media (min-width:768px) and (max-width:1024px) {
-  h1 {
+  .hero {
     font-size: 3rem;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  h1 {
+  .hero {
     font-size:2.5rem;
   }
 }
 
-h2 {
+h1 {
   font-family: onset-bold;
-  font-family: Onest;
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 2.5rem;
 
 }
+
+@media (min-width:768px) and (max-width:1024px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+
+h2 {
+  font-family: onset-bold;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+h3 {
+    font-family: onset-bold;
+}
+
+h4 {
+  font-family: onset-bold;
+}
+
+.onset-bold{
+  font-family: onset-bold;
+}
+
 
 .nav-link{
   color: #303030;
@@ -60,3 +103,6 @@ h2 {
 .brand-blue-bg{
   background-color: #1C4F70;
 }
+
+
+

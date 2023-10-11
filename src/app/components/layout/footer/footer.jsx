@@ -5,7 +5,7 @@ export default function Footer(){
     const more =[
 
         {title: 'Our directors', href: '/our-directors'},
-        {title: 'Link Number 2', href: '/' },
+        {title: 'Accreditation', href: '/accreditation' },
         {title: 'Link Number 3', href: '/' },
         {title: 'Link Number 4', href: '/' },
         {title: 'Link Number 5', href: '/' },

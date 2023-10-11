@@ -103,7 +103,7 @@ export default function Accreditation(){
 
         <div className="mt-10">
 
-                <h3 className="text-[1.56rem] text-[#484848] mb-5">Accreditiation process</h3>
+                <h3 className="text-[1.56rem] text-[#484848] mb-5">Accreditation process</h3>
 
                 <p>
                     Applicants for the award of Member of the Institute of General Practice Management (MIGPM) must demonstrate the required proficiency as detailed in the accreditation framework.

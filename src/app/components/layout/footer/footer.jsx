@@ -7,8 +7,9 @@ export default function Footer(){
         {title: 'Our directors', href: '/our-directors'},
         {title: 'Accreditation', href: '/accreditation' },
         {title: 'Membership', href: '/membership' },
-        {title: 'Link Number 4', href: '/' },
-        {title: 'Link Number 5', href: '/' },
+        {title: 'Get involved', href: '/get-involved' },
+        {title: 'Membership inclusion criteria', href: '/more/membership-inclusion-criteria' },
+        { title: 'IGPM Northern Ireland', href: '/more/igpm-northern-ireland' },
 
     ];
 
@@ -16,7 +17,7 @@ export default function Footer(){
     const about = [
 
         { title: 'Member case studies', href: '/about-igpm/member-case-studies' },
-        { title: 'Link Number 2', href: '/' },
+        { title: 'Our Representatives', href: '/about-igpm/our-representatives' },
         { title: 'Link Number 3', href: '/' },
         { title: 'Link Number 4', href: '/' },
         { title: 'Link Number 5', href: '/' },
@@ -27,7 +28,7 @@ export default function Footer(){
 
     return(
         <>        
-            <div className="bg-[#E2E2E2]  min-h-[265px] mt-[70px] md:mt-[114px]">
+            <div className="bg-[#1C4F70]  min-h-[265px] mt-[70px] md:mt-[114px]">
 
                 <div className="max-w-[1440px] m-auto">
 
@@ -37,11 +38,11 @@ export default function Footer(){
 
                             <div className="col-span-4 sm:col-span-1 md:col-span-1">
 
-                                <h4 className="onset-bold text-[20px] text-[#484848]">More</h4>
+                                <h4 className="onset-bold text-[20px] text-[white]">More</h4>
                                 
                                 <ul className="mt-4 flex flex-col gap-3 text-[0.93rem]">
                                     {more.map((m, index) => (
-                                        <li key={index} className="underline text-[#484848] hover:text-[#292929]">
+                                        <li key={index} className="underline text-[#CBCBCB] hover:text-[#ffffff]">
                                             <Link href={m.href} >
                                                 {m.title}
                                             </Link>
@@ -53,11 +54,11 @@ export default function Footer(){
 
                             <div className="col-span-4 sm:col-span-1 md:col-span-1">
 
-                                <h4 className="onset-bold text-[20px] text-[#484848]">About IGPM</h4>
+                                <h4 className="onset-bold text-[20px] text-[white]">About IGPM</h4>
 
                                 <ul className="mt-4 flex flex-col gap-3 text-[0.93rem]">
                                     {about.map((a, index) => (
-                                        <li key={index} className="underline text-[#484848] hover:text-[#292929]">
+                                        <li key={index} className="underline text-[#CBCBCB] hover:text-[#ffffff]">
                                             <Link href={a.href}>
                                                 {a.title}
                                             </Link>
@@ -69,7 +70,7 @@ export default function Footer(){
 
                             <div className="col-span-4 md:col-span-1">
 
-                                <h4 className="onset-bold text-[20px] text-[#484848]">Follow us</h4>
+                                <h4 className="onset-bold text-[20px] text-[white]">Follow us</h4>
 
                                 <div className="flex mt-4 gap-1">
 
@@ -83,7 +84,7 @@ export default function Footer(){
 
                             <div className="col-span-4 md:col-span-1">
 
-                                <h4 className="onset-bold text-[20px] text-[#484848]">Contact us</h4>
+                                <h4 className="onset-bold text-[20px] text-[white]">Contact us</h4>
 
                                 <div className="flex gap-2 items-center text-[#484848]">
 

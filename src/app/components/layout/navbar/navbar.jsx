@@ -5,10 +5,11 @@ import Hamburger from "./hamburger";
 export default function Navbar(){
 
     const navigation = [
-        {link: 'Home', href:'/', active: false},
-        {link: 'Services', href: '/', active: false},
-        {link: 'News', href: '/', active: false },
-        {link: 'Contact us', href: '/', active: false }
+        { link: 'Accreditation', href: '/accreditation', active: false },
+        { link: 'Our Directors', href: '/our-directors', active: false },
+        {link: 'Get Involved', href: '/get-involved', active: false },
+        { link: 'News', href: '/news', active: false },
+
     ];
 
     return(
@@ -41,7 +42,7 @@ export default function Navbar(){
                                         
                                     <Hamburger/>
                                         
-                                    <button className="bg-[#1C4F70] px-[29px] py-[9px] text-white rounded-[13px] text-[15px] hover:bg-[#83C5E9] hidden lg:flex">Join us</button>
+                                    <Link href="/membership"><button className="bg-[#1C4F70] px-[29px] py-[9px] text-white rounded-[13px] text-[15px] hover:bg-[#83C5E9] hidden lg:flex">Join us</button></Link>
                                         
                                 </div>
                                         

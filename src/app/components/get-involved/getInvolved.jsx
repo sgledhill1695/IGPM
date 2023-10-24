@@ -8,8 +8,6 @@ export default function GetInvolved(){
 
             <p className="mt-5">We appreciate how busy everyone is at the moment – ourselves included – so want to give people as much chance as possible to get an application in. References will not be required at this stage but will be requested after shortlisting so please have these prepared.</p>
 
-            <p className="mt-5">We appreciate how busy everyone is at the moment – ourselves included – so want to give people as much chance as possible to get an application in. References will not be required at this stage but will be requested after shortlisting so please have these prepared.</p>
-
             <p className="mt-5">Applicants should specify which group they would like to represent, and we will also consider applications for both a region and one of these groups. These roles will act as an additional point of contact and support for members who classify themselves into one or more of these groups and will help us shape our programmes and activities around issues that specifically impact these members.</p>
 
             <div className="bg-[url('/images/download-image.png')] bg-center bg-cover bg-no-repeat rounded-[25px] min-h-[190px] w-[100%] mt-10 relative">

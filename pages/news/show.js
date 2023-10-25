@@ -8,6 +8,8 @@ export default function Show(){
     const router = useRouter();
     const postParam = router.query.post
 
+
+
     const [post, setPost] = useState({});
 
     const retrievedPost = {};
@@ -17,10 +19,14 @@ export default function Show(){
 
     useEffect(() => {
 
+        console.log('post Param is' + postParam);
+
+
+
         promises.push(api.get(`/posts/${postParam}?_embed`)
             .then(resp => {
 
-                //console.log(resp.data)
+                console.log(resp.data)
 
                 
                 const originalDate = new Date(resp.data.date_gmt);
@@ -81,7 +87,7 @@ export default function Show(){
                 setPost(retrievedPost);
             })
 
-    }, [])
+    }, [postParam])
 
 
 

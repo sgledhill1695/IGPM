@@ -109,4 +109,33 @@ h4 {
 }
 
 
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.post p{
+  margin-top: 25px;
+}
+
+.post ul {
+  margin-left: 25px;
+  margin-top: 10px;
+  list-style-type: disc;
+}
+
+
+.post{
+  all: unset !important;
+}
+
 

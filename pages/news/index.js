@@ -4,9 +4,14 @@ import CatergorySelector from "@/app/components/news/categorySelector";
 import PostItem from "@/app/components/news/postItem";
 import axios from "axios";
 import api from "@/app/components/axios/api";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import Loader from "@/app/components/reuseable/loader";
+import { LoaderContext } from "@/app/components/context/loaderContext";
 
 export default function news(){
+
+    const loader = useContext(LoaderContext);
+
 
     const [posts, setPosts] = useState([]);
     const [previousPosts, setPreviousPosts] = useState([]);
@@ -16,6 +21,8 @@ export default function news(){
 
     useEffect(() => {
 
+        loader.setLoading(true);
+
         const promises = [];
 
 
@@ -24,7 +31,6 @@ export default function news(){
 
             .then(resp => {
 
-             //   console.log(resp.data);
 
                 resp.data.map(category => {
 
@@ -42,7 +48,6 @@ export default function news(){
 
             .catch(err => {
 
-                console.log(err);
 
             })
         
@@ -53,7 +58,8 @@ export default function news(){
 
             .then(function (resp) {
 
-              // console.log(resp.data);
+                console.log(resp)
+
 
 
                 resp.data.map(post => {
@@ -73,7 +79,10 @@ export default function news(){
                     retrievedPost.category = post.categories[0];
                     retrievedPost.category_id = post.categories[0];
                     retrievedPost.excerpt = post.excerpt.rendered;
-                    retrievedPost.image = post._embedded["wp:featuredmedia"][0].source_url
+                    retrievedPost.image = post._embedded["wp:featuredmedia"][0].source_url;
+
+
+
 
                     retrievedPosts.push(retrievedPost);
 
@@ -83,7 +92,6 @@ export default function news(){
 
             .catch(function (err) {
 
-               console.log(err);
 
             }));
 
@@ -106,13 +114,18 @@ export default function news(){
 
                 })
 
+
                 setPosts(retrievedPosts);
                 setPreviousPosts(retrievedPosts);
                 setCategories(retrievedCategories);
+                loader.setLoading(false)
+
+                console.log(posts)
+
 
                 
             })
-            .catch(() => {
+            .catch((err) => {
                 alert('promise error');
             });
 
@@ -131,7 +144,6 @@ export default function news(){
 
             setCategoryFilter(updatedFilter);
 
-            console.log(categoryFilter);
 
         } else if (categoryFilter.includes(id)){
 
@@ -144,12 +156,7 @@ export default function news(){
     }
 
     useEffect(() => {
-
-       // console.log(categoryFilter);
-
-        console.log(posts);
-
-        
+     
 
         if(categoryFilter.length > 0){
 
@@ -163,7 +170,6 @@ export default function news(){
 
             setPosts(previousPosts);
 
-            console.log(retrievedPosts);
 
         }
 
@@ -173,7 +179,6 @@ export default function news(){
 
 
 
-    console.log(retrievedPosts)
  
 
 
@@ -189,6 +194,9 @@ export default function news(){
                     title={'Latest News'}
                     
                 />
+
+                <Loader />
+
 
                 <div className="max-w-[1440px] m-auto">
                     <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
@@ -216,7 +224,7 @@ export default function news(){
 
                             {posts.map(post => (
 
-                                <div key={post.id} className="col-span-1">
+                                <div key={post.id} className="col-span-1 flex justify-center sm:justify-start">
                                     <PostItem post={post}/>
                                 </div>
 

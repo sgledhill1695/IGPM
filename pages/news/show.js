@@ -1,9 +1,13 @@
 import api from "@/app/components/axios/api";
 import Layout from "../layout";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from 'next/router';
+import Loader from "@/app/components/reuseable/loader";
+import { LoaderContext } from "@/app/components/context/loaderContext";
 
 export default function Show(){
+
+    const loader = useContext(LoaderContext);
 
     const router = useRouter();
     const postParam = router.query.post
@@ -19,7 +23,8 @@ export default function Show(){
 
     useEffect(() => {
 
-        console.log('post Param is' + postParam);
+        loader.setLoading(true);
+
 
 
 
@@ -85,6 +90,7 @@ export default function Show(){
             .then(() => {
 
                 setPost(retrievedPost);
+                loader.setLoading(false);
             })
 
     }, [postParam])
@@ -94,10 +100,11 @@ export default function Show(){
     return(
         <>
             <Layout>
+                <Loader/>
                 <div className="max-w-[1440px] m-auto">
                     <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 mt-[140px] lg:mt-[200px] gap-[30px] justify-center md:items-center">
+                        <div className={`grid grid-cols-1 md:grid-cols-2 mt-[140px] lg:mt-[200px] gap-[30px] justify-center md:items-center`}>
 
                             <img src={post.image} className="w-[100%] border-[12px]"></img>
 
@@ -120,10 +127,10 @@ export default function Show(){
 
                         </div>
 
-                        <div className="mt-[50px]" dangerouslySetInnerHTML={{ __html: post.content }} >
+                        <div  className="post remove-all mt-[50px]" dangerouslySetInnerHTML={{ __html: post.content }} >
+
                             
-
-
+                        
                         </div>
 
 

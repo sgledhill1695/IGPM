@@ -22,23 +22,23 @@ export default function newsBanner(){
                         </button>
 
                         
-                        {/* Webinars */}
-                        <button className="bg-[url('/images/webinars.png')] bg-center bg-no-repeat bg-cover col-span-2 row-span-1 relative">
-                            <Link href={'/webinars'}>
+                        {/* Join Us */}
+                        <button className="bg-[url('/images/membership-header.png')] bg-center bg-no-repeat bg-cover col-span-2 row-span-1 relative">
+                            <Link href={'/membership'}>
                                 <div className="bg-[#00000054] absolute content-[''] top-[0px] right-[0px] w-[100%] h-[100%] flex flex-col justify-center ps-[28px] pe-[28px]">
-                                    <h3 className="text-white text-[1.8rem] relative text-start">Webinars</h3>
-                                    <p className="text-white text-[0.9rem] text-start">An insight into some of the key topics facing our teams in primary care today.</p>
+                                    <h3 className="text-white text-[1.8rem] relative text-start">Join Us</h3>
+                                    <p className="text-white text-[0.9rem] text-start">Become an associate member of the IGPM.</p>
                                 </div>
                             </Link>
                         </button>
 
         
                         {/* Toolkits */}
-                        <button className="bg-[url('/images/toolkits.png')]  col-span-2 row-span-1 flex flex-col justify-center ps-[28px] pe-[28px] relative">
-                            <Link href={'/toolkits'}>
+                        <button className="bg-[url('/images/accreditation-two.png')] bg-center bg-no-repeat bg-cover  col-span-2 row-span-1 flex flex-col justify-center ps-[28px] pe-[28px] relative">
+                            <Link href={'/accreditation'}>
                                 <div className="bg-[#00000054] absolute content-[''] top-[0px] right-[0px] w-[100%] h-[100%] flex flex-col justify-center ps-[28px] pe-[28px]">
-                                    <h3 className="text-white text-[1.8rem] text-start">Toolkits</h3>
-                                    <p className="text-white text-[0.9rem] text-start">An insight into some of the key topics facing our teams in primary care today.</p>
+                                    <h3 className="text-white text-[1.8rem] text-start">Accreditation</h3>
+                                    <p className="text-white text-[0.9rem] text-start">Develop and progress your career in General Practice Management.</p>
                                 </div>
                             </Link>
                         </button>

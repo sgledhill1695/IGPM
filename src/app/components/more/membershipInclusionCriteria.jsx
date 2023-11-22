@@ -37,7 +37,9 @@ export default function MembershipInclusionCriteria(){
                     content={
                         <>
                             <p>All members are expected to abide by a code of conduct.</p>
-                            <div className="bg-[#1C4F70] px-[29px] py-[9px] text-white rounded-[13px] text-[15px] hover:bg-[#83C5E9] hover:cursor-pointer mt-5 flex justify-center">Download the members code of conduct</div>
+                            <a href="https://igpm-dashboard.zebrafishwebdesigns.co.uk/wp-content/uploads/2023/11/IGPM-Code-of-Conduct-for-Members.pdf" target="_blank">
+                                <button className="bg-[#1C4F70] px-[29px] py-[9px] text-white rounded-[13px] text-[15px] hover:bg-[#83C5E9] hover:cursor-pointer mt-5 flex justify-center">Download the members code of conduct</button>
+                            </a>
                         </>
                     }
 

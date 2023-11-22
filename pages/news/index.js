@@ -7,14 +7,25 @@ import api from "@/app/components/axios/api";
 import { useState, useEffect, useContext } from "react";
 import Loader from "@/app/components/reuseable/loader";
 import { LoaderContext } from "@/app/components/context/loaderContext";
+import Error from "next/error";
 
 export default function news(){
 
     const loader = useContext(LoaderContext);
 
 
+    //The state for displaying posts
     const [posts, setPosts] = useState([]);
+
+    const [error, setError] = useState(false);
+
+    //A state for tracking all posts retrieved originally from the api
     const [previousPosts, setPreviousPosts] = useState([]);
+
+
+    //State for tracking and making changes to pagination
+    const [paginatePosts, setPaginatePosts] = useState([]);
+
     const [categories, setCategories] = useState([]);
     const retrievedPosts = [];
     const retrievedCategories = [];
@@ -48,6 +59,7 @@ export default function news(){
 
             .catch(err => {
 
+                setError(true);
 
             })
         
@@ -57,8 +69,6 @@ export default function news(){
         promises.push(api.get('/posts?_embed')
 
             .then(function (resp) {
-
-                console.log(resp)
 
 
 
@@ -82,8 +92,6 @@ export default function news(){
                     retrievedPost.image = post._embedded["wp:featuredmedia"][0].source_url;
 
 
-
-
                     retrievedPosts.push(retrievedPost);
 
                 });
@@ -92,6 +100,7 @@ export default function news(){
 
             .catch(function (err) {
 
+                setError(true);
 
             }));
 
@@ -114,19 +123,18 @@ export default function news(){
 
                 })
 
-
-                setPosts(retrievedPosts);
+                
+                setPaginatePosts(retrievedPosts);
                 setPreviousPosts(retrievedPosts);
                 setCategories(retrievedCategories);
-                loader.setLoading(false)
-
-                console.log(posts)
-
+                loader.setLoading(false);
 
                 
             })
             .catch((err) => {
-                alert('promise error');
+
+                setError(true);
+
             });
 
     },[]);
@@ -155,95 +163,164 @@ export default function news(){
 
     }
 
+
+
+
     useEffect(() => {
      
 
         if(categoryFilter.length > 0){
 
-
             const filteredPosts = previousPosts.filter(post => categoryFilter.includes(post.category_id));
-            setPosts(filteredPosts);
+
+            console.log(filteredPosts);
+
+            setPaginatePosts(filteredPosts);
+
+            console.log(paginatePosts);
+
+
 
         } else if(categoryFilter.length < 1) {
 
-            //alert('no filter')
-
-            setPosts(previousPosts);
+            setPaginatePosts(previousPosts);
 
 
         }
-
-
 
     },[categoryFilter]);
 
 
 
- 
+    //HandlePostPagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8;
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+
+
+    useEffect(() => {
+
+        console.log('change to pagiate posts');
+
+        const currentItems = paginatePosts.slice(indexOfFirstItem, indexOfLastItem);
+
+        setPosts(currentItems);
+
+    }, [paginatePosts, currentPage]);
 
 
 
 
+
+    const handlePagination = (pageNumber) => {
+
+        setCurrentPage(pageNumber);
+
+
+    }
 
 
     return(
         <>
-            <Layout>
-                <PageHeader
-                    backgroundImage={'/images/newspaper-large.png'}
-                    title={'Latest News'}
-                    
-                />
-
-                <Loader />
-
-
-                <div className="max-w-[1440px] m-auto">
-                    <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
-
-                        <div className="mt-[47px] mb-[73px] flex gap-[20px]">
-
-                            {categories.map(category => (
-
-                                <div key={category.id}>
-                                    <CatergorySelector
-                                        retrievedCategory={category}
-                                        handleCategoryFilter={handleCategoryFilter}
-                                    />
+            {error ? (
+                <>
+                    <Error statusCode={500} />    
+                </>
+            )
+    
+            :(
+                <>
+                    <Layout>
+                        <PageHeader
+                            backgroundImage={'/images/newspaper-large.png'}
+                            title={'Latest News'}
+    
+                        />
+    
+                        <Loader />
+    
+                        <div className="max-w-[1440px] m-auto">
+                            <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
+    
+                                <div className="mt-[47px] mb-[73px] flex gap-[20px]">
+    
+                                    {categories.map(category => (
+    
+                                        <div key={category.id}>
+                                            <CatergorySelector
+                                                retrievedCategory={category}
+                                                handleCategoryFilter={handleCategoryFilter}
+                                            />
+                                        </div>
+    
+                                    ))}
+    
+    
                                 </div>
-
-                            ))}
-
-
-                        </div>
-
-
-
-                        <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[50px]">
-
-
-                            {posts.map(post => (
-
-                                <div key={post.id} className="col-span-1 flex justify-center sm:justify-start">
-                                    <PostItem post={post}/>
+    
+    
+    
+                                <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[50px] mb-[50px]">
+    
+    
+                                    {posts.map(post => (
+    
+                                        <div key={post.id} className="col-span-1 flex justify-center sm:justify-start">
+                                            <PostItem post={post} />
+                                        </div>
+    
+                                    ))}
+    
+    
                                 </div>
+    
+    
+                                {paginatePosts.length > 8 && (
+    
+                                    <nav
+                                        className="flex items-center justify-between   bg-white px-4 py-3 sm:px-6"
+                                        aria-label="Pagination"
+                                    >
+                                        <div className="flex flex-1 justify-between sm:justify-end">
+    
+                                            <button
+                                                onClick={() => handlePagination(currentPage - 1)}
+                                                disabled={currentPage === 1}
+                                                className="relative inline-flex items-center rounded-md bg-[#1C4F70] px-3 py-2 text-sm  text-white  ring-gray-300 hover:bg-[#107DAB] focus-visible:outline-offset-0"
+                                            >
+                                                Newer posts
+                                            </button>
+    
+    
+    
+                                            <button
+                                                onClick={() => handlePagination(currentPage + 1)}
+                                                disabled={indexOfLastItem >= paginatePosts.length}
+                                                className="relative ml-3 inline-flex items-center rounded-md bg-[#1C4F70] px-3 py-2 text-sm  text-white  ring-gray-300 hover:bg-[#107DAB] focus-visible:outline-offset-0"
+                                            >
+    
+                                                Older posts
+    
+                                            </button>
+    
+    
+                                        </div>
+    
+                                    </nav>
+    
 
-                            ))}
-
-
+                                )}
+    
+                            </div>
                         </div>
+    
+                    </Layout>
+    
+                </>
+        )
+    }
 
-
-
-
-                    </div>
-                </div>        
-
-
-
-
-                
-            </Layout>
         </>
     )
 }

@@ -1,7 +1,20 @@
 import styles from './index.module.css';
 import ImageButton from '../reuseable/image-buttons/imageButton';
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
+
 
 export default function HowWeCanHelp(){
+
+    const options = {
+        rootMargin: '-150px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+    //Intersection Observer
+    const { ref, inView, entry } = useInView(options);
+
 
     return(
         <>
@@ -12,8 +25,7 @@ export default function HowWeCanHelp(){
 
                     <div className='ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]'>
 
-                        <div className='flex flex-col justify-center'>
-
+                        <div ref={ref} className={`${inView ? 'animate__animated animate__fadeIn opacity-100' : 'opacity-0'} flex flex-col justify-center`}>
 
 
                             <div className="relative">

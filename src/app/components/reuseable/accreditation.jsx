@@ -1,6 +1,18 @@
-import ArrowAccordion from "./arrowAccordion"
+import ArrowAccordion from "./arrowAccordion";
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
 
 export default function Accreditation(){
+
+    const options = {
+        rootMargin: '150px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+    //Intersection Observer
+    const { ref, inView, entry } = useInView(options);
+
 
     const accordionData = [
 
@@ -74,7 +86,7 @@ export default function Accreditation(){
 
             <div className="grid grid-cols-2 mt-[35px] sm:mt-[60px] lg:mt-[100px]">
 
-                <div className="col-span-2 lg:col-span-1">
+                <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInLeft opacity-100' : 'opacity-0'} col-span-2 lg:col-span-1`}>
     
                     <p>
                         The IGPM has been created to support the development and career progression of the General Practice Management community and provide a governing body through which managers can become accredited and fully recognised as a distinct profession.
@@ -91,19 +103,18 @@ export default function Accreditation(){
     
                 </div>
     
-                <div className="col-span-2 lg:col-span-1 flex items-center justify-center lg:justify-end">
+                <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'} col-span-2 lg:col-span-1 flex items-center justify-center lg:justify-end`}>
     
                     <img src="/images/accreditation-three.png" className="h-[200px] mt-[40px] lg:mt-[0px]"></img>
-    
     
                 </div>
 
 
         </div>
 
-        <div className="mt-10">
+            <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInUp opacity-100' : 'opacity-0'} mt-10`}>
 
-                <h3 className="text-[1.56rem] text-[#484848] mb-5">Accreditation process</h3>
+                <h3  className="text-[1.56rem] text-[#484848] mb-5">Accreditation process</h3>
 
                 <p>
                     Applicants for the award of Member of the Institute of General Practice Management (MIGPM) must demonstrate the required proficiency as detailed in the accreditation framework.
@@ -148,27 +159,27 @@ export default function Accreditation(){
                     </div>
 
                 </div>
-        </div>
+            </div>
 
         <div>
 
 
         </div>
 
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px]">
+            <div className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'} mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px]`}>
 
-            {accordionData.map((data, index) => (
-                <div key={index} className="col-span-1 lg:col-span-1">
-                    <ArrowAccordion
-                        key={index}
-                        title={data.title}
-                        content={data.content}
-                    />
-                </div>
-            ))}
-
-        </div>
-
+                {accordionData.map((data, index) => (
+                    <div key={index} className="col-span-1 lg:col-span-1">
+                        <ArrowAccordion
+                            key={index}
+                            title={data.title}
+                            content={data.content}
+                        />
+                    </div>
+                ))}
+    
+            </div>
+    
 
 
         

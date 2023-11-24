@@ -1,7 +1,11 @@
 import Layout from "../layout";
 import RobynClark from "@/app/components/our-directors/robynClark";
 
+
 export default function robynClark(){
+
+
+
     
     return(
         <>

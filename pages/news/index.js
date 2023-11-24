@@ -8,8 +8,21 @@ import { useState, useEffect, useContext } from "react";
 import Loader from "@/app/components/reuseable/loader";
 import { LoaderContext } from "@/app/components/context/loaderContext";
 import Error from "next/error";
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
+
 
 export default function news(){
+
+    const options = {
+        rootMargin: '0px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+    //Intersection Observer
+    const { ref, inView, entry } = useInView(options);
+
 
     const loader = useContext(LoaderContext);
 
@@ -240,8 +253,8 @@ export default function news(){
     
                         <Loader />
     
-                        <div className="max-w-[1440px] m-auto">
-                            <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
+                        <div className="max-w-[1440px] m-auto min-h-[100vh]">
+                            <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'} ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]`}>
     
                                 <div className="mt-[47px] mb-[73px] flex gap-[20px]">
     

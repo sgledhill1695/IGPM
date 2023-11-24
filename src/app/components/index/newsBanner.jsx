@@ -1,7 +1,20 @@
 import Link from "next/link";
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
+
 
 
 export default function newsBanner(){
+
+    const options = {
+        rootMargin: '-150px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+    //Intersection Observer
+    const { ref, inView, entry } = useInView(options);
+
     
     return(
         <>
@@ -9,7 +22,7 @@ export default function newsBanner(){
 
                 <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
 
-                    <div className="grid grid-rows-3 md:grid-rows-2 md:grid-cols-4 gap-[7px]">
+                    <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInUp opacity-100' : 'opacity-0'} grid grid-rows-3 md:grid-rows-2 md:grid-cols-4 gap-[7px]`}>
 
 
                         {/* Latest news */}

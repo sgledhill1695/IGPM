@@ -2,6 +2,7 @@ import PageHeader from "@/app/components/reuseable/pageHeader";
 import Layout from "./layout";
 import Accreditation from "@/app/components/reuseable/accreditation";
 
+
 export default function accreditation(){
 
     return(

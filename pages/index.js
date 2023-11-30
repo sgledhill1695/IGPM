@@ -7,15 +7,13 @@ import NewsBanner from "@/app/components/index/newsBanner";
 export default function Index(){
 
     return(
-        <>
         <Layout>
-            
-            <Hero/>
-            <WhyIGPM/>
-            <HowWeCanHelp/>
-            <NewsBanner/>
-            
+            <main className="mb-[70px] md:mb-[114px]">
+                <Hero />
+                <WhyIGPM />
+                <HowWeCanHelp />
+                <NewsBanner />
+            </main>
         </Layout>
-        </>
     )
 }

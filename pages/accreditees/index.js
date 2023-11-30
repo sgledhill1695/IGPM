@@ -1,27 +1,111 @@
 import api from "@/app/components/axios/api";
-import { useEffect } from "react";
+import { useEffect, useState, useContext } from "react";
+import Layout from "../layout";
+import { useSearchParams } from "next/navigation";
+import SearchAccreditees from "@/app/components/accreditees/searchAccreditees";
+import Search from "@/app/components/accreditees/search";
+import Loader from "@/app/components/reuseable/loader";
+import { LoaderContext } from "@/app/components/context/loaderContext";
+import { useForm } from "react-hook-form";
 
 export default function index(){
 
-    useEffect(() => {
+    //Form validation
+    const {register, handleSubmit, formState:{ errors }} = useForm();
 
-        api.get('/book')
+    const {loading, setLoading} = useContext(LoaderContext);
+
+    //State to control which component is diplayed
+    const [submitted, setSubmitted] = useState(false);
+
+    //Error state
+    const [error, setError] = useState(false);
+
+    //Data retrieved by api
+    const [fetchedData, setFetchedData] = useState([]);
+
+    //State for keyword entered by user
+    const [keyword, setKeyword] = useState('');
+
+
+    const handleFormSubmit = (data) => {
+
+        console.log(data);
+
+
+        setLoading(true);
+
+         api.get('/book')
             .then(resp => {
-                console.log(resp);
+
+                setLoading(true);
+
+                const retrievedData = [];
+
+                resp.data.map(data => {
+
+                    retrievedData.push({
+                        name: data.acf.accreditee_name,
+                        active: data.acf.active,
+                        county: data.acf.county,
+                        date: data.acf.date_achieved,
+                        registration: data.acf.registration_number
+                    })
+
+                })
+                
+                setKeyword(data.search);
+                setFetchedData(retrievedData);
+                setSubmitted(true);
+                setLoading(false);
+
             })
+
             .catch(err => {
+
                 console.log(err);
+
             })
-
-
-    },[])
+ 
+        }
 
 
     return(
         <>
-            <h1>
-                Accreditee
-            </h1>
+            <Layout>
+
+                <Loader/>
+
+                <main>
+
+                    {submitted ? (
+                        <>
+                        <Search
+                            handleFormSubmit={handleFormSubmit}
+                            handleSubmit={handleSubmit}
+                            fetchedData={fetchedData}
+                            keyword={keyword}
+                            setError={setError}
+                            register={register}
+                            errors={errors}
+                        />
+
+                        </>
+                    ) : (
+                        <>
+                            <SearchAccreditees 
+                                handleFormSubmit={handleFormSubmit}
+                                setKeyword={setKeyword}
+                                handleSubmit={handleSubmit}
+                                register={register}
+                                errors={errors}
+                            />
+                        </>
+                    )}
+    
+                </main>
+            </Layout>
+
         </>
     )
 }

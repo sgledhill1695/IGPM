@@ -1,6 +1,16 @@
-export default function SearchAccreditees({handleFormSubmit, setKeyword, handleSubmit, register, errors}){
-    
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
 
+
+export default function SearchAccreditees({handleFormSubmit, setKeyword, handleSubmit, register, errors}){
+
+    const { ref, inView, entry } = useInView({
+        rootMargin: '0px',
+        threshold: 1,
+        triggerOnce: true,
+    });
+
+    
     const handleKeyword = (e) => {
 
         setKeyword(e.target.value);
@@ -9,7 +19,7 @@ export default function SearchAccreditees({handleFormSubmit, setKeyword, handleS
 
     return(
 
-        <div className={`relative bg-[url('/images/accreditee-search.png')] bg-center bg-no-repeat bg-cover h-[80vh]`}>
+        <div className={`relative bg-[url('/images/acreditee-search-header.png')] bg-top bg-no-repeat bg-cover h-[80vh]`}>
             <div className="bg-[#00000070] absolute top-[0px] left-[0px] h-[100%] w-[100%] z-10">
             </div>
 
@@ -17,7 +27,7 @@ export default function SearchAccreditees({handleFormSubmit, setKeyword, handleS
 
                 <div className={`h-[80vh] flex flex-col items-center sm:items-start justify-center`}>
 
-                    <div className='flex flex-col text-center sm:text-start  ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px] sm:max-w-[550px]'>
+                    <div ref={ref} className={`${inView ? 'animate__animated animate__fadeIn opacity-100' : 'opacity-0'} flex flex-col text-center sm:text-start  ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px] sm:max-w-[550px]`}>
 
                         <h1 className="text-white">Find accredited managers</h1>
                         <p className=" text-white text-[16px] mt-2 sm:max-w-[500px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>

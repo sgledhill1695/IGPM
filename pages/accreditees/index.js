@@ -7,8 +7,11 @@ import Search from "@/app/components/accreditees/search";
 import Loader from "@/app/components/reuseable/loader";
 import { LoaderContext } from "@/app/components/context/loaderContext";
 import { useForm } from "react-hook-form";
+import { notFound } from 'next/navigation'
 
 export default function index(){
+
+
 
     //Form validation
     const {register, handleSubmit, formState:{ errors }} = useForm();
@@ -29,9 +32,6 @@ export default function index(){
 
 
     const handleFormSubmit = (data) => {
-
-        console.log(data);
-
 
         setLoading(true);
 
@@ -63,9 +63,8 @@ export default function index(){
 
             .catch(err => {
 
-                console.log(err);
 
-            })
+            });
  
         }
 

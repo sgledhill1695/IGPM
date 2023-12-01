@@ -11,15 +11,20 @@ export default function robynClark(){
         <>
             <Layout>
 
-                <div className="max-w-[1440px] m-auto">
+                <main className="mb-[70px] md:mb-[114px]">
 
-                    <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
+                    <div className="max-w-[1440px] m-auto">
 
-                        <RobynClark />
+                        <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
 
-                    </div>
+                            <RobynClark />
 
-                </div>    
+                        </div>
+
+                    </div>    
+
+
+                </main>
 
             </Layout>
         </>

@@ -10,7 +10,7 @@ export default function Footer(){
         {title: 'Get involved', href: '/get-involved' },
         {title: 'IGPM Northern Ireland', href: '/more/igpm-northern-ireland' },
         {title: 'IGPM Wales', href: '/more/igpm-wales' },
-        {title: 'Toolkits', href: 'toolkits' },
+        {title: 'Toolkits', href: '/toolkits' },
 
 
 

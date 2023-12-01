@@ -7,9 +7,9 @@ export default function Navbar(){
 
     const navigation = [
         { link: 'Accreditation', href: '/accreditation', active: false },
-        { link: 'Search', href: '/accreditees', active: false },
-        { link: 'Our Directors', href: '/our-directors', active: false },
+        { link: 'Directors', href: '/our-directors', active: false },
         { link: 'Get Involved', href: '/get-involved', active: false },
+        { link: 'Find', href: '/accreditees', active: false },
         { link: 'News', href: '/news', active: false },
 
     ];

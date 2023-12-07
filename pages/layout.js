@@ -7,12 +7,13 @@ export default function Layout({children}){
 
     return(
         <>
-            <Navbar/>
 
-                {children}
+            <Navbar />
 
-            <Footer/>
-                
+            {children}
+
+            <Footer />
+
         </>
     )
 }

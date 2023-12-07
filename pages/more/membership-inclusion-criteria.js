@@ -1,6 +1,7 @@
 import Layout from "../layout";
 import MembershipInclusionCriteria from "@/app/components/more/membershipInclusionCriteria";
 
+
 export default function membershipInclusionCriteria(){
 
     return(

@@ -214,8 +214,6 @@ export default function news(){
 
     useEffect(() => {
 
-        console.log('change to pagiate posts');
-
         const currentItems = paginatePosts.slice(indexOfFirstItem, indexOfLastItem);
 
         setPosts(currentItems);

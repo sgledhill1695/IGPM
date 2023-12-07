@@ -1,9 +1,22 @@
 import ArrowAccordion from "../reuseable/arrowAccordion";
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
+
 
 export default function MembershipInclusionCriteria(){
 
+    const options = {
+        rootMargin: '0px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+    const { ref, inView, entry } = useInView(options);
+
+
+
     return(
-        <>
+        <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'}`}>
             <h1 className="mt-[140px] lg:mt-[200px] text-[#484848]">Membership Inclusion Criteria</h1>
 
             <p className="mt-5">You must be <b>currently</b> working in a management capacity within General Practice. The following roles are accepted:</p>
@@ -48,6 +61,6 @@ export default function MembershipInclusionCriteria(){
             </div>
 
             
-        </>
+        </div>
     )
 }

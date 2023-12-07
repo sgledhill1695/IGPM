@@ -17,7 +17,7 @@ export default function PostItem({post}){
                 <p className="mt-3 text-[#404040] onset-semibold text-[15px]">{post.title}</p>
                 <p className="text-[14px] mt-3 opacity-50" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
                 
-                <Link href={'/news/show?post=' + post.id} className="absolute bottom-[-30px] text-[#1C4F70] text-[14px] onset-semibold">Read More</Link>
+                <Link href={'/news/' + post.id} className="absolute bottom-[-30px] text-[#1C4F70] text-[14px] onset-semibold">Read More</Link>
 
             </div>
         </>

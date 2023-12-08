@@ -6,6 +6,7 @@ import Loader from "@/app/components/reuseable/loader";
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/router';
 import 'animate.css';
+import DOMPurify from "dompurify";
 
 
 export default function Id (){
@@ -23,6 +24,7 @@ export default function Id (){
     const { ref, inView, entry } = useInView(options);
 
     const [post, setPost] = useState({});
+    const [cleanedPost, setCleanedPost] =useState(null);
 
     const retrievedPost = {};
     const retrievedCategory = {};
@@ -46,8 +48,6 @@ export default function Id (){
 
         promises.push(api.get(`/posts/${postParam}?_embed`)
             .then(resp => {
-
-                console.log(resp);
 
                 const originalDate = new Date(resp.data.date_gmt);
                 const day = originalDate.getDate();
@@ -95,7 +95,13 @@ export default function Id (){
             .then(() => {
 
                 setPost(retrievedPost);
+
+
+                const clean = DOMPurify.sanitize(retrievedPost.content);
+
+                setCleanedPost(DOMPurify.sanitize(retrievedPost.content));
                 loader.setLoading(false);
+                
             })
             .catch(() => {
 
@@ -111,6 +117,7 @@ export default function Id (){
     return (
         <Layout>
             <Loader />
+
             <main className="mb-[70px] md:mb-[114px] min-h-[100vh]">
                 <div className="max-w-[1440px] m-auto">
                     <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'} ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]`}>
@@ -125,12 +132,13 @@ export default function Id (){
                                 </div>
                             </div>
                         </div>
-                        <div className="post remove-all mt-[50px]" dangerouslySetInnerHTML={{ __html: post.content }} >
+                        <div className="post remove-all mt-[50px]" dangerouslySetInnerHTML={{ __html: cleanedPost }}>
+                            
                         </div>
                     </div>
                 </div>
             </main>
-
+            
         </Layout>
     )
 }

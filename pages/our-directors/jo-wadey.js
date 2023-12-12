@@ -6,15 +6,21 @@ export default function joWadey(){
     return(
         <>
             <Layout>
-                <div className="max-w-[1440px] m-auto">
 
-                    <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
+                <main className="mb-[70px] md:mb-[114px]">
 
-                        <JoWadey />
+                    <div className="max-w-[1440px] m-auto">
+
+                        <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
+
+                            <JoWadey />
+
+                        </div>
 
                     </div>
 
-                </div>
+
+                </main>
 
             </Layout>
         </>

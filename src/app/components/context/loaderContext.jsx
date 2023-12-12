@@ -5,7 +5,7 @@ export const LoaderContext = createContext(false);
 
 export function LoaderProvider({children}){
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     return(
         

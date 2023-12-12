@@ -6,7 +6,13 @@ export default function memberCaseStudies(){
     return(
         <>
             <Layout>
-                <MemberCaseStudies/>
+
+                <main className="mb-[70px] md:mb-[114px]">
+
+                    <MemberCaseStudies />
+
+                </main>
+
             </Layout>
         
         </>

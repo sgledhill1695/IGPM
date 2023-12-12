@@ -1,22 +1,39 @@
-import DirectorLarge from "./directorLarge"
+import DirectorLarge from "./directorLarge";
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
+
 
 export default function KayKean() {
+
+    const options = {
+        rootMargin: '0px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+    //Intersection Observer
+    const { ref, inView, entry } = useInView(options);
+
+
 
     return (
         <>
             <div className="flex flex-col md:flex-row justify-between mt-[140px] md:mt-[200px] items-center gap-[20px] md:gap-[40px]">
 
 
+                <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInLeft opacity-100' : 'opacity-0'}`}>
 
-                <DirectorLarge
-                    url={'/'}
-                    image={'/images/director.png'}
-                    backgroundColor={'#83C5E9'}
-                />
+                    <DirectorLarge
+                        url={'/'}
+                        image={'/images/director.png'}
+                        backgroundColor={'#83C5E9'}
+                    />
+
+                </div>
 
 
 
-                <div className="">
+                <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'}`}>
 
                     <h1 className="text-[#484848]">Kay Kean</h1>
 

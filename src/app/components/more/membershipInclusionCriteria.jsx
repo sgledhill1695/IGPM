@@ -1,9 +1,22 @@
 import ArrowAccordion from "../reuseable/arrowAccordion";
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
+
 
 export default function MembershipInclusionCriteria(){
 
+    const options = {
+        rootMargin: '0px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+    const { ref, inView, entry } = useInView(options);
+
+
+
     return(
-        <>
+        <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'}`}>
             <h1 className="mt-[140px] lg:mt-[200px] text-[#484848]">Membership Inclusion Criteria</h1>
 
             <p className="mt-5">You must be <b>currently</b> working in a management capacity within General Practice. The following roles are accepted:</p>
@@ -37,7 +50,9 @@ export default function MembershipInclusionCriteria(){
                     content={
                         <>
                             <p>All members are expected to abide by a code of conduct.</p>
-                            <div className="bg-[#1C4F70] px-[29px] py-[9px] text-white rounded-[13px] text-[15px] hover:bg-[#83C5E9] hover:cursor-pointer mt-5 flex justify-center">Download the members code of conduct</div>
+                            <a href="https://igpm-dashboard.zebrafishwebdesigns.co.uk/wp-content/uploads/2023/11/IGPM-Code-of-Conduct-for-Members.pdf" target="_blank">
+                                <button className="bg-[#1C4F70] px-[29px] py-[9px] text-white rounded-[13px] text-[15px] hover:bg-[#83C5E9] hover:cursor-pointer mt-5 flex justify-center">Download the members code of conduct</button>
+                            </a>
                         </>
                     }
 
@@ -46,6 +61,6 @@ export default function MembershipInclusionCriteria(){
             </div>
 
             
-        </>
+        </div>
     )
 }

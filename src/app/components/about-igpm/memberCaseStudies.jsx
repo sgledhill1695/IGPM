@@ -1,10 +1,24 @@
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
+
+
 export default function MemberCaseStudies(){
+
+    const options = {
+        rootMargin: '0px',
+        threshold: 0,
+        triggerOnce: true,
+    };
+
+
+    const { ref, inView, entry } = useInView(options);
+
 
     return(
         <>
             <div className="max-w-[1440px] m-auto mt-[140px] lg:mt-[200px]">
 
-                <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]">
+                <div ref={ref} className={`${inView ? 'animate__animated animate__fadeInRight opacity-100' : 'opacity-0'} ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px]`}>
 
                     <h1 className="text-[#484848]">Member Case Studies</h1>
 

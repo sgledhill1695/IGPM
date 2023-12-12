@@ -14,7 +14,9 @@ export default function GetInvolved(){
 
                 <div className="bg-[#1c4e7098] w-[100%] h-[100%] absolute top-[0px] left-[0px] rounded-[25px] ps-[5px] pe-[5px] sm:ps-[40px] flex items-center justify-center sm:justify-start">
 
-                    <button className="bg-[#83C5E9] h-[40px] w-[360px] rounded-[10px] text-[##484848] hover:bg-[#004F72] hover:text-white ">Download our rep specification pack</button>
+                    <a href="https://igpm-dashboard.zebrafishwebdesigns.co.uk/wp-content/uploads/2023/11/The-Institute-of-General-Practice-Management-Regional_Group-Representative-%E2%80%93-Role-Purpose-Person-Specification-.pdf" target="_blank">
+                        <button className="bg-[#83C5E9] h-[40px] w-[360px] rounded-[10px] text-[##484848] hover:bg-[#004F72] hover:text-white ">Download our rep specification pack</button>
+                    </a>
 
                 </div>
 

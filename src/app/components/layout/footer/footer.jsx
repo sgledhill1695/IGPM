@@ -10,6 +10,8 @@ export default function Footer(){
         {title: 'Get involved', href: '/get-involved' },
         {title: 'IGPM Northern Ireland', href: '/more/igpm-northern-ireland' },
         {title: 'IGPM Wales', href: '/more/igpm-wales' },
+        {title: 'Toolkits', href: '/toolkits' },
+
 
 
     ];
@@ -28,7 +30,7 @@ export default function Footer(){
 
     return(
         <>        
-            <div className="bg-[#1C4F70]  min-h-[265px] mt-[70px] md:mt-[114px] pb-[70px]">
+            <div className="bg-[#1C4F70]  min-h-[265px] pb-[70px]">
 
                 <div className="max-w-[1440px] m-auto">
 

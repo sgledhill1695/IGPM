@@ -7,10 +7,10 @@ import Search from "@/app/components/accreditees/search";
 import Loader from "@/app/components/reuseable/loader";
 import { LoaderContext } from "@/app/components/context/loaderContext";
 import { useForm } from "react-hook-form";
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation';
+import Error from "next/error";
 
 export default function index(){
-
 
 
     //Form validation
@@ -63,6 +63,9 @@ export default function index(){
 
             .catch(err => {
 
+                setLoading(false);
+                setError(true);
+
 
             });
  
@@ -75,34 +78,42 @@ export default function index(){
 
                 <Loader/>
 
-                <main>
+                {error ? (
+                    <>
+                        <Error statusCode={500} />
+                    </>
+                ) : (
+                    <>
+                        <main>
+                            {submitted ? (
+                                <>
+                                    <Search
+                                        handleFormSubmit={handleFormSubmit}
+                                        handleSubmit={handleSubmit}
+                                        fetchedData={fetchedData}
+                                        keyword={keyword}
+                                        setError={setError}
+                                        register={register}
+                                        errors={errors}
+                                    />
 
-                    {submitted ? (
-                        <>
-                        <Search
-                            handleFormSubmit={handleFormSubmit}
-                            handleSubmit={handleSubmit}
-                            fetchedData={fetchedData}
-                            keyword={keyword}
-                            setError={setError}
-                            register={register}
-                            errors={errors}
-                        />
+                                </>
+                            ) : (
+                                <>
+                                    <SearchAccreditees
+                                        handleFormSubmit={handleFormSubmit}
+                                        setKeyword={setKeyword}
+                                        handleSubmit={handleSubmit}
+                                        register={register}
+                                        errors={errors}
+                                    />
+                                </>
+                            )}
 
-                        </>
-                    ) : (
-                        <>
-                            <SearchAccreditees 
-                                handleFormSubmit={handleFormSubmit}
-                                setKeyword={setKeyword}
-                                handleSubmit={handleSubmit}
-                                register={register}
-                                errors={errors}
-                            />
-                        </>
-                    )}
-    
-                </main>
+                        </main>
+                    </>
+                )}
+
             </Layout>
 
         </>

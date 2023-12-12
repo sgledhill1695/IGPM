@@ -35,7 +35,6 @@ export default function news(){
     //A state for tracking all posts retrieved originally from the api
     const [previousPosts, setPreviousPosts] = useState([]);
 
-
     //State for tracking and making changes to pagination
     const [paginatePosts, setPaginatePosts] = useState([]);
 

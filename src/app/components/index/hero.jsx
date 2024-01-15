@@ -25,10 +25,18 @@ export default function Hero(){
                             <h1 className='text-white z-10 max-w-[176px] sm:max-w-[100%] hero'>Welcome to the <span className='text-[#83C5E9]'>IGPM</span></h1>
                             <p className='text-white max-w-[400px] sm:max-w-[620px] mt-[6px] text-[1rem] md:text-[1rem] lg:text-[1.1] lg:'>The representative body for all managers working in primary care in the UK.</p>
 
-                            <Link href="/membership">
-                                <button className='bg-[#83C5E9] hover:bg-[#1899D3] w-[160px]  text-black px-[50px] py-[9px] rounded-[13px] mt-[23px]'>Join Us</button>
-                            </Link>
-                            
+                            <div className='flex flex-col sm:flex-row sm:gap-[20px]'>
+
+                                <Link href="/membership" className='max-w-[160px]'>
+                                    <button className='bg-[#83C5E9] hover:bg-[#1899D3] max-w-[160px]  text-black px-[50px] py-[9px] rounded-[13px] mt-[23px]'>Join Us</button>
+                                </Link>
+
+                                <a href="https://mailchi.mp/a499843ce039/the-igpm-institute-of-general-practice-management-newsletter" target="_blank" className='max-w-[160px] flex justify-center'>
+                                    <button className='bg-[#83C5E9] hover:bg-[#1899D3]   text-black px-[50px] py-[9px] rounded-[13px] mt-[23px] ms-[28px] sm:ms-[0px]'>Newsletter</button>
+                                </a>
+
+                            </div>
+
                         </div>
 
                     </div>

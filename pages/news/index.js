@@ -103,7 +103,6 @@ export default function news(){
                     retrievedPost.excerpt = post.excerpt.rendered;
                     retrievedPost.image = post._embedded["wp:featuredmedia"][0].source_url;
 
-
                     retrievedPosts.push(retrievedPost);
 
                 });
@@ -111,6 +110,12 @@ export default function news(){
             })
 
             .catch(function (err) {
+
+                console.log(err)
+
+                console.log('hit')
+
+
 
                 setError(true);
 

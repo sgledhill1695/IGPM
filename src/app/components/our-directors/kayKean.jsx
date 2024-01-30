@@ -25,7 +25,7 @@ export default function KayKean() {
 
                     <DirectorLarge
                         url={'/'}
-                        image={'/images/director.png'}
+                        image={'/images/kay-kean.png'}
                         backgroundColor={'#83C5E9'}
                     />
 

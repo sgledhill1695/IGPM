@@ -20,7 +20,7 @@ export default function Footer(){
 
 
     const about = [
-        { title: 'Our directors', href: '/our-directors' },
+        { title: 'Our Directors', href: '/our-directors' },
         { title: 'Member case studies', href: '/about-igpm/member-case-studies' },
         { title: 'Our Representatives', href: '/about-igpm/our-representatives' },
         { title: 'Webinars', href: '/webinars' },

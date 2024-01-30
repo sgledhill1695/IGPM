@@ -25,7 +25,7 @@ export default function WhyIGPM(){
                     <h2 ref={ref} className={`${inView ? 'animate__animated animate__fadeInUp opacity-100' : 'opacity-0'} text-[#484848] text-center sm:text-start`}>Why IGPM?</h2>
 
                     <p className={`${inView ? 'animate__animated animate__fadeInUp opacity-100' : 'opacity-0'} mt-[20px] lg:mt-[14px] text-center sm:text-start`}>
-                        The IGPM Represent every Manager in General Practice throughout the UK, we are here to ensure your voice is heard, and our professional is recognised.
+                        The Igpm Represent every Manager in General Practice throughout the UK, we are here to ensure your voice is heard, and our professional is recognised.
                     </p>
 
                     <div ref={ref} className={`flex flex-col lg:flex-row items-center lg:items-start lg:justify-between mt-[56px] lg:mt-[56px] xl:mt-[68px]`}>
@@ -44,7 +44,7 @@ export default function WhyIGPM(){
                                         <ul className="list-disc flex flex-col gap-[6px]">
                                             <li>Getting our voice heard where it matters.</li>
                                             <li>Influencing and engaging with decision-makers on issues that affect managers and their workplaces</li>
-                                            <li>Championing the invaluable role of practice</li>
+                                            <li>Championing the invaluable role of practice managers</li>
                                         </ul>
 
                                     </div>
@@ -82,7 +82,7 @@ export default function WhyIGPM(){
 
                                         <ul className="list-disc flex flex-col gap-[6px]">
                                             <li>The IGPM hold the only register of recognised professional managers working in General Practice in the UK.</li>
-                                            <li>As MIGPM, the manager is expectedto uphold the high standards of the role and thecode of conduct of the institute. Should standardsfall below this, and a referral made to the board, athorough investigation would take place.</li>
+                                            <li>As MIGPM, the manager is expected to uphold the high standards of the role and the code of conduct of the institute. Should standards fall below this, and a referral made to the board, a thorough investigation would take place.</li>
                                             <li>Reassurance for every employer.</li>
                                         </ul>
 
@@ -100,7 +100,7 @@ export default function WhyIGPM(){
                                         <ul className="list-disc flex flex-col gap-[6px]">
                                             <li>A network of regional representatives providing Managers with a local contact throughout England, Scotland, Wales and Northern Ireland.</li>
                                             <li>Expanding benefits for every member including webinars, dedicated Facebook group, email signature badge, and much more to come.</li>
-                                            <li>The IGPM offer every member peer to peer to.</li>
+                                            <li>The IGPM offer every member peer to peer support.</li>
                                         </ul>
 
                                     </div>

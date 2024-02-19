@@ -118,8 +118,6 @@ export default function OurRepresentatives(){
 
     ]
 
-    
-
 
     return(
         <>
@@ -135,7 +133,7 @@ export default function OurRepresentatives(){
 
                         <div key={index}>
                             <b className='text-[#484848]'>{region.rep}</b>
-                            <table className="min-w-full divide-y divide-gray-300 mt-6">
+                            <table className="md:min-w-[50%] divide-y divide-gray-300 mt-6">
                                 <thead>
                                     <tr className="divide-x divide-gray-200">
 
@@ -190,7 +188,7 @@ export default function OurRepresentatives(){
 
                 <Image
                     src="/images/reps-map.png"
-                    className='mt-[50px] mx-auto'
+                    className='mt-[50px] mx-auto sm:mx-0'
                     width={500}
                     height={500}
                     alt="image of the map"

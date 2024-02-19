@@ -193,7 +193,7 @@ export default function OurRepresentatives(){
                     className='mt-[50px] mx-auto'
                     width={500}
                     height={500}
-                    alt="Picture of the author"
+                    alt="image of the map"
                 />
 
             </div>

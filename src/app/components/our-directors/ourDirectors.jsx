@@ -54,19 +54,6 @@ export default function OurDirectors(){
 
                     </div>
 
-
-                    <div className="col-span-4 sm:col-span-2 2xl:col-span-1">
-
-                        <Director
-                            url={'/our-directors/jo-wadey'}
-                            image={'/images/jo-wadey.png'}
-                            name={'Jo Wadey'}
-                            backgroundColor={'#83C5E9'}
-                        />
-
-                    </div>
-
-
                 </div>
 
             </div>

@@ -39,70 +39,88 @@ export default function Id (){
 
     useEffect(() => {
 
-        loader.setLoading(true);
+        if(!postParam){
 
-        promises.push(api.get(`/posts/${postParam}?_embed`)
-            .then(resp => {
+            router.push('/news')
 
-                const originalDate = new Date(resp.data.date_gmt);
-                const day = originalDate.getDate();
-                const month = originalDate.getMonth() + 1;
-                const year = originalDate.getFullYear();
-                const formattedDateString = `${day < 10 ? '0' : ''}${day}-${month < 10 ? '0' : ''}${month}-${year}`;
+        } else {
 
-                retrievedPost.title = resp.data.title.rendered;
-                retrievedPost.date = formattedDateString;
-                retrievedPost.category = resp.data.categories[0];
-                retrievedPost.content = resp.data.content.rendered;
-                retrievedPost.image = resp.data._embedded["wp:featuredmedia"][0].source_url;
+            console.log(postParam)
 
-                return api.get('/categories')
+            setError(false);
 
-                    .then(resp => {
+            loader.setLoading(true);
 
-                        resp.data.map(category => {
+            promises.push(api.get(`/posts/${postParam}?_embed`)
+                .then(resp => {
 
-                            if (retrievedPost.category === category.id) {
+                    const originalDate = new Date(resp.data.date_gmt);
+                    const day = originalDate.getDate();
+                    const month = originalDate.getMonth() + 1;
+                    const year = originalDate.getFullYear();
+                    const formattedDateString = `${day < 10 ? '0' : ''}${day}-${month < 10 ? '0' : ''}${month}-${year}`;
 
-                                retrievedPost.category = category.name;
+                    retrievedPost.title = resp.data.title.rendered;
+                    retrievedPost.date = formattedDateString;
+                    retrievedPost.category = resp.data.categories[0];
+                    retrievedPost.content = resp.data.content.rendered;
+                    retrievedPost.image = resp.data._embedded["wp:featuredmedia"][0].source_url;
 
-                            };
+                    return api.get('/categories')
 
-                        });
+                        .then(resp => {
 
+                            resp.data.map(category => {
 
-                    })
-                    .catch(err => {
+                                if (retrievedPost.category === category.id) {
 
-                        setError(true);
+                                    retrievedPost.category = category.name;
 
-                    })
+                                };
 
-            })
-            .catch(err => {
-
-                setError(true);
-
-            }));
+                            });
 
 
-        Promise.all(promises)
-            .then(() => {
+                        })
+                        .catch(err => {
 
-                setPost(retrievedPost);
+                            setError(true);
+                            console.log(err)
+
+                        })
+
+                })
+                .catch(err => {
+
+                    setError(true);
+                    console.log(err)
 
 
-                const clean = DOMPurify.sanitize(retrievedPost.content);
+                }));
 
-                setCleanedPost(DOMPurify.sanitize(retrievedPost.content));
-                loader.setLoading(false);
-                
-            })
-            .catch(() => {
 
-                setError(true);
+            Promise.all(promises)
+                .then(() => {
 
-            })
+                    setPost(retrievedPost);
+
+
+                    const clean = DOMPurify.sanitize(retrievedPost.content);
+
+                    setCleanedPost(DOMPurify.sanitize(retrievedPost.content));
+                    loader.setLoading(false);
+
+                })
+                .catch(() => {
+
+                    setError(true);
+
+                })
+
+
+
+        }
+
 
     }, [postParam])
 

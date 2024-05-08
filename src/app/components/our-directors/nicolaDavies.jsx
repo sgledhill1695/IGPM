@@ -25,7 +25,7 @@ export default function nicolaDavies(){
 
                     <DirectorLarge
                         url={'/'}
-                        image={'/images/director-2.png'}
+                        image={'/images/nicola-davies.png'}
                         backgroundColor={'#83C5E9'}
                     />
 

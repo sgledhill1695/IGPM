@@ -11,6 +11,8 @@ export default function Footer(){
         {title: 'IGPM Northern Ireland', href: '/more/igpm-northern-ireland' },
         {title: 'IGPM Wales', href: '/more/igpm-wales' },
         {title: 'Toolkits', href: '/toolkits' },
+        {title: 'Regulatory Process', href: '/more/regulatory-process' },
+
 
 
 
@@ -18,7 +20,7 @@ export default function Footer(){
 
 
     const about = [
-        { title: 'Our directors', href: '/our-directors' },
+        { title: 'Our Directors', href: '/our-directors' },
         { title: 'Member case studies', href: '/about-igpm/member-case-studies' },
         { title: 'Our Representatives', href: '/about-igpm/our-representatives' },
         { title: 'Webinars', href: '/webinars' },

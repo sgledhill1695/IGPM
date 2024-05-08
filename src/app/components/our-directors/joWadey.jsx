@@ -24,7 +24,7 @@ export default function JoWadey() {
 
                     <DirectorLarge
                         url={'/'}
-                        image={'/images/director-2.png'}
+                        image={'/images/jo-wadey.png'}
                         backgroundColor={'#83C5E9'}
                     />
 

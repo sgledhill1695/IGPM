@@ -37,7 +37,7 @@ export default function HowWeCanHelp(){
                             </div>
 
                             <p className="mt-[20px] lg:mt-[14px] text-[1.1rems] text-center sm:text-start text-white">
-                                Our leadership majority will always be people working in Practice Management. We will never be an organisation for profit and any funds generated will go back into our membership. The views of our members will always be the most important part of our constitution. The views of our members will always be the most important part of our constitution.
+                                Our leadership majority will always be people working in Practice Management. We will never be an organisation for profit and any funds generated will go back into our membership. The views of our members will always be the most important part of our constitution.
                             </p>
 
                         </div>

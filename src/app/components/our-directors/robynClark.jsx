@@ -24,7 +24,7 @@ export default function RobynClark(){
 
                     <DirectorLarge
                         url={'/'}
-                        image={'/images/director.png'}
+                        image={'/images/robyn-clark.png'}
                         backgroundColor={'#83C5E9'}
                     />
 

@@ -6,9 +6,7 @@ export default function OurDirectors(){
 
         { url: '/', image: '/images/director.png', name: 'Robyn Clark', backgroundColor: '#83C5E9' }
 
-
-
-    ]
+    ];
 
 
     return(
@@ -25,7 +23,7 @@ export default function OurDirectors(){
 
                         <Director 
                             url={'/our-directors/robyn-clark'}
-                            image={'/images/director.png'}
+                            image={'/images/robyn-clark.png'}
                             name={'Robyn Clark'}
                             backgroundColor={'#83C5E9'}
                         />
@@ -37,7 +35,7 @@ export default function OurDirectors(){
 
                         <Director
                             url={'/our-directors/nicola-davies'}
-                            image={'/images/director-2.png'}
+                            image={'/images/nicola-davies.png'}
                             name={'Nicola Davies'}
                             backgroundColor={'#83C5E9'}
                         />
@@ -49,7 +47,7 @@ export default function OurDirectors(){
 
                         <Director
                             url={'/our-directors/kay-kean'}
-                            image={'/images/director.png'}
+                            image={'/images/kay-kean.png'}
                             name={'Kay Keane'}
                             backgroundColor={'#83C5E9'}
                         />
@@ -61,7 +59,7 @@ export default function OurDirectors(){
 
                         <Director
                             url={'/our-directors/jo-wadey'}
-                            image={'/images/director-2.png'}
+                            image={'/images/jo-wadey.png'}
                             name={'Jo Wadey'}
                             backgroundColor={'#83C5E9'}
                         />

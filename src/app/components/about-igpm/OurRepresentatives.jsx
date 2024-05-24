@@ -93,7 +93,7 @@ export default function OurRepresentatives(){
                     tableRows: [
                         { area: 'Cheshire and Merseyside ICB', rep: '', repTwo: '' },
                         { area: 'Derby and Derbyshire ICB', rep: 'Carla Mathurin MIGPM', repTwo: 'Michelle Nutbrown' },
-                        { area: 'Greater Manchester ICB', rep: 'ynsey Philbin MIGPM', repTwo: '' },
+                        { area: 'Greater Manchester ICB', rep: 'Lynsey Philbin MIGPM', repTwo: '' },
                         { area: 'Humber and North Yorkshire ICB', rep: 'Richard Langthorp MIGPM', repTwo: '' },
                         { area: 'Lancashire and South Cumbria ICB', rep: '', repTwo: '' },
                         { area: 'Lincolnshire ICB', rep: 'Adrian Down MIGPM', repTwo: '' },

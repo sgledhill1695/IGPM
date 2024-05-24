@@ -28,7 +28,7 @@ export default function Hero(){
                             <div className='flex flex-col sm:flex-row sm:gap-[20px]'>
 
                                 <Link href="/membership" className='max-w-[160px]'>
-                                    <button className='bg-[#744dbe] hover:bg-[#61419d] max-w-[160px]  text-white px-[50px] py-[9px] rounded-[13px] mt-[23px]'>Join Us</button>
+                                    <button className='bg-[#83C5E9] hover:bg-[#9ecee8] text-black  max-w-[160px] px-[50px] py-[9px] rounded-[13px] mt-[23px]'>Join Us</button>
                                 </Link>
 
                                 <a href="https://mailchi.mp/a499843ce039/the-igpm-institute-of-general-practice-management-newsletter" target="_blank" className='max-w-[160px] flex justify-center'>

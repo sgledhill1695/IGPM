@@ -1,3 +1,5 @@
+import PayPalButton from "./paypalButton";
+
 export default function Membership(){
 
     return(
@@ -32,7 +34,10 @@ export default function Membership(){
                 <div className="flex flex-col items-center">
 
                     <img src="/images/membership-group.png" alt="image of a group of people smiling" className="sm:max-w-[500px]"></img>
-                    <a target="_blank" className="w-[100%] sm:max-w-[500px] lg:w-[100%]" href="https://www.paypal.com/webapps/hermes?token=32R33450PE0069346&useraction=commit&wpsFlowRedirectToXorouterSkipHermesStartTime=1697029841117&mfid=1697029840826_f7309533ee478"><button className="bg-[#1B4E70] hover:bg-[#72C6ED] hover:text-[black] w-[100%] sm:max-w-[500px] lg:w-[100%] py-[8px] rounded-[8px] mt-3 text-white">Buy Now</button></a>
+{/*                     <a target="_blank" className="w-[100%] sm:max-w-[500px] lg:w-[100%]" href="https://www.paypal.com/webapps/hermes?token=32R33450PE0069346&useraction=commit&wpsFlowRedirectToXorouterSkipHermesStartTime=1697029841117&mfid=1697029840826_f7309533ee478"><button className="bg-[#1B4E70] hover:bg-[#72C6ED] hover:text-[black] w-[100%] sm:max-w-[500px] lg:w-[100%] py-[8px] rounded-[8px] mt-3 text-white">Buy Now</button></a>
+ */}
+                    <div id="paypal-button-container-P-9AC4713973647582WMA7HEIQ" className="mt-5"></div>
+                    <PayPalButton/>
 
                 </div>
 

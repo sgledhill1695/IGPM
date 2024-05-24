@@ -22,10 +22,10 @@ export default function WhyIGPM(){
 
                 <div className="ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px] mt-[32px] md:mt-[88px] lg:mt-[105px]">
 
-                    <h2 ref={ref} className={`${inView ? 'animate__animated animate__fadeInUp opacity-100' : 'opacity-0'} text-[#484848] text-center sm:text-start`}>Why IGPM?</h2>
+                    <h2 ref={ref} className={`${inView ? 'animate__animated animate__fadeInUp opacity-100' : 'opacity-0'} text-[#484848] text-center sm:text-start`}>Be part of the change</h2>
 
                     <p className={`${inView ? 'animate__animated animate__fadeInUp opacity-100' : 'opacity-0'} mt-[20px] lg:mt-[14px] text-center sm:text-start`}>
-                        The Igpm Represent every Manager in General Practice throughout the UK, we are here to ensure your voice is heard, and our professional is recognised.
+                        The IGPM represent every Manager in General Practice throughout the UK, we are here to ensure your voice is heard, and our profession is recognised.
                     </p>
 
                     <div ref={ref} className={`flex flex-col lg:flex-row items-center lg:items-start lg:justify-between mt-[56px] lg:mt-[56px] xl:mt-[68px]`}>

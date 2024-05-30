@@ -32,7 +32,7 @@ export default function regulatoryProcess() {
                                 </p>
 
 
-                                <a href="https://igpm-dashboard.zebrafishwebdesigns.co.uk/wp-content/uploads/2024/01/IGPM-Code-of-Conduct-for-Members-1-1.pdf" target="_blank">
+                                <a href="https://dashboard.igpm.org.uk/wp-content/uploads/2024/01/IGPM-Code-of-Conduct-for-Members-1-1.pdf" target="_blank">
                                     <button className="bg-[#1C4F70] hover:bg-[#83C5E9] hover:text-[black] mt-5 py-[12px] px-[30px] rounded-[13px] text-white">IGPM Code Of Conduct</button>
                                 </a>
 

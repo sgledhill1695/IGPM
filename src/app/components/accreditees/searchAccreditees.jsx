@@ -30,7 +30,7 @@ export default function SearchAccreditees({handleFormSubmit, setKeyword, handleS
                     <div ref={ref} className={`${inView ? 'animate__animated animate__fadeIn opacity-100' : 'opacity-0'} flex flex-col text-center sm:text-start  ms-[3vw] me-[3vw] sm:ms-[5vw] sm:me-[5vw] xl:ms-[162px] xl:me-[162px] sm:max-w-[550px]`}>
 
                         <h1 className="text-white">Find accredited managers</h1>
-                        <p className=" text-white text-[16px] mt-2 sm:max-w-[500px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                        <p className=" text-white text-[16px] mt-2 sm:max-w-[500px]">Search the register of MIGPM Accredited Managers. This means the member has met the criteria set out by the framework.</p>
 
                         <form onSubmit={handleSubmit(handleFormSubmit)}>
                             <div className="bg-[#00000031] py-[20px] px-[20px] mt-4 inline-block">
